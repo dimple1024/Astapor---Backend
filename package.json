@@ -1,0 +1,28 @@
+{
+  "name": "astapor",
+  "version": "1.0.0",
+  "description": "Check-List App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimple1024/Astapor---Backend.git"
+  },
+  "author": "Dimple Verma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dimple1024/Astapor---Backend/issues"
+  },
+  "homepage": "https://github.com/dimple1024/Astapor---Backend#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.2"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.7"
+  }
+}

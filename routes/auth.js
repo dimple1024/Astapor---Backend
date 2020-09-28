@@ -36,6 +36,22 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-router.post("/login", async (req, res) => {});
+router.post("/login", async (req, res) => {
+  try {
+    let user_data = await User.findOne({ userName: req.body.userName });
+    if (user_data) {
+      const validPassword = await bcrypt.compare(
+        req.body.password,
+        user_data.password
+      );
+      if (!user_data || !validPassword) {
+        return res.status(400).send("Invalid Username or Password!");
+      }
+      return res.status(200).send(`Welcome ${user_data.userName}`);
+    }
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
 
 module.exports = router;

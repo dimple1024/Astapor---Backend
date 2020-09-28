@@ -27,6 +27,8 @@ const authRoutes = require("./routes/auth");
 // creating application-level middleware
 app.use("/user", authRoutes);
 
+app.get("/", () => console.log("Root Page!!"));
+
 const port = process.env.PORT;
 
 app.listen(port, () => console.log(`Server is started at port:${port}`));

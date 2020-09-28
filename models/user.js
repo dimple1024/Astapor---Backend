@@ -3,28 +3,30 @@ const mongoose = require("mongoose");
 let UserSchema = new mongoose.Schema({
   userName: {
     type: String,
-    required: false,
+    required: true,
     unique: true,
-    max: 50,
-    min: 6,
+    maxlength: 50,
+    minlength: 6,
+    trim: true,
+    match: /^\w+$/,
   },
   emailId: {
     type: String,
-    required: true,
+    required: [true, "Email ID is required"],
     unique: true,
-    max: 555,
-    min: 10,
-    validate: {
-      validator: isEmail,
-      message: "Email id is invalid",
-    },
+    maxlength: 555,
+    minlength: 10,
+    match: /^\w+@[a-z]+\.\w+$/,
+    // validate: {
+    //   message: "Email id is invalid",
+    // },
     isVerfied: false,
   },
   password: {
     type: String,
     required: true,
-    max: 255,
-    min: 8,
+    maxlength: 255,
+    minlength: 8,
   },
   createdAt: {
     type: Date,

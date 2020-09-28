@@ -24,9 +24,9 @@ router.post("/signup", async (req, res) => {
           password: hashedPassword,
         });
 
-        let { user_name } = await user.save();
+        let { user_data } = await user.save();
 
-        return res.status(200).send(user_name);
+        return res.status(200).send(user_data.userName);
       } catch (err) {
         return res.status(500).send(err.message);
       }
@@ -35,3 +35,7 @@ router.post("/signup", async (req, res) => {
     return res.status(500).send(err.message);
   }
 });
+
+router.post("/login", async (req, res) => {});
+
+module.exports = router;

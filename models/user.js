@@ -20,7 +20,6 @@ let UserSchema = new mongoose.Schema({
     // validate: {
     //   message: "Email id is invalid",
     // },
-    isVerfied: false,
   },
   password: {
     type: String,

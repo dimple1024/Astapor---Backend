@@ -23,9 +23,14 @@ mongoose
 
 // importing Auth routes
 const authRoutes = require("./routes/auth");
+const taskRoutes = require("./routes/tasks");
 
 // creating application-level middleware
 app.use("/user", authRoutes);
+
+app.use("/user/task", taskRoutes);
+
+app.get("/", () => console.log("Root Page!!"));
 
 const port = process.env.PORT;
 
